@@ -4,5 +4,5 @@
  * Finché resta vuoto, le pagine mostrano un listino di esempio e non inviano nulla.
  */
 window.VD_CONFIG = {
-  API_URL: 'https://script.google.com/macros/s/AKfycbyuCxbJgV4VmKj6ivEyUxWr_qEq18sOVcsWet0a7FeBy2MsiUpPJkwMlAMbdRgDAjuR9Q/exec'
+  API_URL: 'https://script.google.com/macros/s/AKfycbwbgcXQxpOpFsEDilRnR6DYoWRgm5lAIifQJRuCvT4FJw6KXZdtJ295a65TWcQnNhDjKg/exec'
 };
