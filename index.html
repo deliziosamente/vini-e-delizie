@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍷</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+<title>Vini &amp; Delizie · Gruppo d’acquisto</title>
+<meta name="description" content="Gruppo d’acquisto Vini & Delizie: scegli i prodotti dal listino e invia il tuo ordine.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-mode="consumer">
+
+<header class="wrap">
+  <h1>Vini &amp; Delizie</h1>
+  <p class="intro">Il gruppo d’acquisto per vini e prodotti scelti. Segna le quantità che ti interessano, lascia i tuoi recapiti e scegli come pagare: riceverai il riepilogo con il codice d’ordine.</p>
+  <p id="status" class="status">Carico il listino…</p>
+</header>
+
+<main class="wrap">
+  <div id="notice" class="notice" role="status" hidden></div>
+
+  <div id="shop">
+    <div id="catalog" aria-label="Listino prodotti"></div>
+
+    <form id="order-form" class="order" autocomplete="on">
+      <h2>I tuoi dati</h2>
+      <div class="field">
+        <label for="name">Nome e cognome</label>
+        <input id="name" name="name" required maxlength="80" autocomplete="name">
+      </div>
+      <div class="two">
+        <div class="field">
+          <label for="phone">Telefono</label>
+          <input id="phone" name="phone" type="tel" required maxlength="30" autocomplete="tel" inputmode="tel">
+        </div>
+        <div class="field">
+          <label for="email">Email <span>(per ricevere il riepilogo)</span></label>
+          <input id="email" name="email" type="email" maxlength="120" autocomplete="email">
+        </div>
+      </div>
+      <div class="field">
+        <label for="notes">Note <span>(facoltative)</span></label>
+        <textarea id="notes" name="notes" maxlength="500" placeholder="Per esempio: ritiro il sabato, preferenze, richieste particolari"></textarea>
+      </div>
+      <fieldset id="payments" hidden>
+        <legend>Come preferisci pagare?</legend>
+        <div class="choices" id="payments-list"></div>
+      </fieldset>
+      <div class="hp" aria-hidden="true">
+        <label for="website">Non compilare questo campo</label>
+        <input id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+      <label class="check">
+        <input type="checkbox" name="consent" required>
+        <span>Acconsento all’uso di nome, telefono ed email solo per gestire questo ordine all’interno del gruppo.</span>
+      </label>
+    </form>
+  </div>
+
+  <section id="done" hidden>
+    <h2 tabindex="-1">Ordine inviato</h2>
+    <p>Il tuo codice ordine è</p>
+    <p class="code" id="done-code"></p>
+    <ul class="recap" id="done-lines"></ul>
+    <div id="done-pay" hidden>
+      <h3>Pagamento</h3>
+      <p id="done-pay-label"></p>
+      <p class="pay-info" id="done-pay-info" hidden></p>
+    </div>
+    <p id="done-pickup" hidden></p>
+    <p id="done-mail" hidden>Ti abbiamo mandato il riepilogo per email.</p>
+    <button type="button" class="btn ghost" id="again">Fai un altro ordine</button>
+  </section>
+</main>
+
+<div id="bar" class="bar">
+  <div class="wrap">
+    <p class="total"><span id="count">Nessun prodotto</span><strong id="total">0,00 €</strong></p>
+    <button class="btn" id="send" type="submit" form="order-form" disabled>Invia ordine</button>
+  </div>
+</div>
+
+<footer class="wrap">Gruppo d’acquisto Vini &amp; Delizie. I dati inseriti servono solo a gestire gli ordini e restano a chi organizza il gruppo. Nessun dato di pagamento viene raccolto su questa pagina.</footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
