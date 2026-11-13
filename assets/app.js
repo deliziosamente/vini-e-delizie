@@ -37,7 +37,7 @@
         payments: [
           { id: 'paypal', label: 'PayPal' },
           { id: 'bonifico', label: 'Bonifico' },
-          { id: 'contanti', label: 'Contanti al ritiro' }
+          { id: 'contanti', label: 'Contanti anticipati' }
         ]
       },
       products: DEMO_PRODUCTS.map((p) => {
